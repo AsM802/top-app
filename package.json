@@ -1,0 +1,21 @@
+{
+  "name": "top-app-o4-master",
+  "version": "1.0.0",
+  "description": "This document outlines the plan and progress for building an App Store rank finder for Coinbase, Robinhood, and Solana-related applications (e.g., Phantom Wallet). The tool will scrape dynamic content from the Apple App Store, track rankings at 12-hour intervals, and send updates via Telegram.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "app-store-scraper": "^0.18.0",
+    "dotenv": "^17.2.1",
+    "google-play-scraper": "^10.0.1",
+    "node-cron": "^4.2.1",
+    "node-telegram-bot-api": "^0.66.0",
+    "puppeteer": "^24.15.0"
+  }
+}

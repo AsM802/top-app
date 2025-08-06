@@ -1,0 +1,36 @@
+{
+  "name": "ios-app-store-tracker",
+  "version": "1.0.0",
+  "description": "iOS App Store ranking tracker with Telegram notifications using iTunes API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node app.js --test",
+    "dev": "node app.js --test"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "node-cron": "^3.0.3",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "keywords": [
+    "app-store",
+    "rankings",
+    "telegram",
+    "tracking",
+    "ios",
+    "itunes-api",
+    "cryptocurrency",
+    "coinbase",
+    "phantom"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/top-app-o4.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

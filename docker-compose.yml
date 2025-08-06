@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app-store-tracker:
+    build:
+      context: ./top-app-o4-master
+      dockerfile: Dockerfile
+    container_name: ios-app-tracker
+    restart: unless-stopped
+    env_file:
+      - ./top-app-o4-master/.env
+    volumes:
+      - ./data:/app/data
+    networks:
+      - tracker-network
+
+networks:
+  tracker-network:
+    driver: bridge
+
+volumes:
+  tracker-data:
