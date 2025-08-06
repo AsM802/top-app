@@ -4,13 +4,21 @@ const { getAppRankings } = require('./scraper');
 const { sendTelegramMessage } = require('./telegram');
 
 // Schedule the task to run every 12 hours
-cron.schedule('*/12 * * * * *', async () => {
+cron.schedule('0 */6 * * *', async () => {
   console.log('Running app ranking check...');
   try {
     const rankings = await getAppRankings();
     let message = 'App Rankings Update:\n\n';
     rankings.forEach(app => {
-      message += `${app.name} (${app.platform}): ${app.rank}\n`;
+      if (app.platform.includes('Android')) {
+        return; // Skip Android rankings
+      }
+
+      if (app.platform.includes('SensorTower')) {
+        message += `${app.name} ranking in us :( #${app.rank}\n`;
+      } else {
+        message += `${app.name} (${app.platform}): ${app.rank}\n`;
+      }
     });
     await sendTelegramMessage(message);
     console.log('App ranking check completed and message sent.');
@@ -20,4 +28,4 @@ cron.schedule('*/12 * * * * *', async () => {
   }
 });
 
-console.log('App ranking tracker started. Scheduled to run every 12 hours.');
+console.log('App ranking tracker started. Scheduled to run every 6 hours.');
